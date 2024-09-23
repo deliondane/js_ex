@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습</title>
+</head>
+<body>
+  <button onclick="promptDialogBox()">prompt</button>
+  <p id="text"></p>
+  <script>
+    alert("김혜원");
+
+    function promptDialogBox(){
+      var inputStr = prompt("어떤 언어를 공부 중 입니까","자바스크립트를 공부 중입니다");
+      console.log(inputStr);
+    }
+
+    var string = prompt("어떤 언어를 공부 중 입니까","자바스크립트를 공부 중입니다");
+    document.getElementById("text").innerHTML = string;
+    </script>
+</body>
+</html>
