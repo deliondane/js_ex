@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연산자</title>
+  </head>
+  <body>
+    <!--버튼을 클릭하면 increase함수를 호출-->
+    <button type="button" onclick="increase()">증가</button>
+
+    <script>
+      var count = 0;
+      //버튼을 누르면 아래 있는 함수가 호출됨
+      function increase() {
+        //이곳에 코드 작성
+        count++;
+        console.log(count);
+      }
+
+      console.log(10 + 10); //20
+      console.log(20 - 10); //10
+      console.log(30 * 2); //60
+      console.log(50 / 5); //10
+      console.log(100000000 % 2); //0
+      console.log(100000001 % 2); //1
+
+      console.log(-(-10));
+      console.log(-"10");
+      console.log(-true);
+      console.log(-"hello");
+
+      console.log(-+20); //-20
+      console.log("Hello" + 1004); //Hello1004
+      console.log(-false); //-0
+      console.log(+-20); //-20
+      console.log(-(-50)); //50
+      console.log(-"Hi"); //NaN
+
+      var x = 1;
+      x++;
+      console.log(x); //x=2
+
+      x--;
+      console.log(x); //x=1
+
+      var number = 5;
+      number += 5; // 10
+      number -= 5; // 5
+      number *= 6; //30
+      number /= 10; //3
+      number %= 2; //1
+      console.log(number);
+
+      console.log( undefined == false); //false
+      console.log('null' == ''); //false
+      console.log( 1 == '1'); //true
+      console.log( true == 'true'); //false
+      console.log( true == '1'); //true
+      console.log( null == false); //false
+
+      console.log("abc" === "abc"); //true
+      console.log("abc" === "ABC"); //false
+      console.log( undefined === false); //false
+      console.log('null' === ''); //false
+      console.log( 1 === '1'); //false
+      console.log( true === '1'); //false
+      console.log( null === false); //false
+      console.log(NaN === NaN); //false
+
+      console.log(5 <= 4 || 4 > 3); //true
+      console.log(10 < 5 || 3 > 30 ); //false
+      console.log(10 == 10 && 20 > 30); //false
+      console.log(0 > 10 && 30 < 60); //false
+      console.log(10 != 10); //false
+
+    </script>
+  </body>
+</html>
