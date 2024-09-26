@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch연습</title>
+</head>
+<body>
+  <script>
+    // let x = prompt("성인, 미성년자, 노인 중 입력","");
+
+    // switch(x){
+    //   case "성인":
+    //     document.write("1000원");
+    //   break;
+    //   case "미성년자":
+    //     document.write("500원");
+    //   break;
+    //   case "노인":
+    //     document.write("무료");
+    //   break;
+    //   default:
+    //     document.write("존재하지 않는 값입니다.");
+    //     location.reload();
+    // }
+
+
+/*    let fruit = prompt("알파벳 입력","");
+
+    switch(fruit){
+      case "a": case "A":
+        document.write("Apple");
+      break;
+      case "b": case "B":
+        document.write("Banana");
+        break;
+      case "c": case "C":
+          document.write("Cacao");
+      break;
+      default: 
+        alert("다른 알파벳을 입력하세요");
+      break;
+    } 
+*/
+
+
+/*    let grades = prompt("시험 접수 입력","");
+    grades = Number(grades);
+
+    switch(grades){
+      case 90: case 91: case 92: case 93: case 94: case 95:
+      case 96: case 97: case 98: case 99: case 100:
+        document.write("A학점");
+      break;
+      case 80: case 81: case 82: case 83: case 84: case 85:
+      case 86: case 87: case 88: case 89:
+        document.write("B학점");
+      break;
+      case 70: case 71: case 72: case 73: case 74: case 75:
+      case 76: case 77: case 78: case 79: 
+        document.write("C학점");
+      break;
+      default:
+        document.write("조회 할 수 없는 시험 점수 입니다. ");
+        break;
+    }
+*/
+
+
+/*
+    let grades = prompt("시험 점수 입력");
+
+    let result = Number(grades)/10;
+    result = parseInt(result); //소수점 변환
+
+    switch(result){
+      case 10: case 9:
+        document.write("A학점");
+      break;
+      case 8:
+        document.write("B학점");
+      break;
+      case 7:
+        document.write("C학점");
+      break;
+      default:
+        document.write("재수강 하세요.");
+      break;
+    }
+*/
+
+
+  
+      function calculate(){
+        const num1 = parseInt(prompt("첫 번째 정수를 입력해주세요: "));
+        const num2 = parseInt(prompt("두 번째 정수를 입력해주세요: "));
+        const operator = prompt("연산자를 입력해주세요(+, -, *, /) :");
+      
+        let result;
+      
+          switch(operator){
+            case '+': 
+              result = num1 + num2;
+            break;
+            case '-':
+                result = num1 - num2;
+            break; 
+            case '*':
+              result = num1 * num2;
+            break;
+            case '/':
+              if(num2%2 != 0){
+                result = num1 / num2;
+              } else{
+                result = "0으로는 나눌 수 없습니다.";
+              }
+            break;
+            default:
+              result = "잘못된 연산자 입니다.";
+            break;
+          }
+      
+        document.write(result);
+      }
+      calculate();
+
+
+/*
+    let site = prompt("교보문고, 영풍문고, 종로서적 중 이동하고 싶은 사이트 명을 작성해주세요.");
+    var url;
+
+    switch(site){
+      case "교보문고":
+        url = "https://www.kyobobook.co.kr/";
+      break;
+      case "영풍문고":
+        url = "https://www.ypbooks.co.kr/";
+      break;
+      case "종로서적":
+        url = "https://www.jongnobooks.com/";
+      break;
+      default:
+        alert:"보기에 없는 사이트 입니다. ";
+    }
+    if(url).location.href = url;
+
+*/
+  </script>
+</body>
+</html>
