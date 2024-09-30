@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다차원 배열</title>
+</head>
+<body>
+  <script>
+    for(let i = 1; i <= 6; i++){ //i값이 1부터 6까지 1씩 증가하며 반복 실행
+      for(let j = 1; j <= 6; j++){ //j값이 1부터 6까지 1씩 증가하며 반복
+        //i+j값이 6일 경우에만 i와 j값을 출력
+        if (i + j === 6) console.log(`[${i},${j}]`);
+      }
+    }
+    
+    console.log("===============================")
+    
+    //2차원 배열
+    let a = [[1,2,3],[4,5,6],[7,8,9]];
+    // console.log(a[1][1]); //5
+    for(let i = 0; i < a.length; i++){
+      for(let j = 0; j < a[i].length; j++){
+        console.log(a[i][j]);
+      }
+    }
+
+    console.log("===============================")
+    
+    let c = [[[1,2],[3,4]],[[5,6],[7,8]],[[9,10],[11,12]]];
+    
+    for(let i = 0; i < c.length; ++i){
+      for(let j = 0; j < c[i].length; ++j){
+        for(let k = 0; k < c[i][j].length; ++k){
+          console.log(c[i][j][k]);
+        }
+      }
+    }
+
+  </script>
+</body>
+</html>
