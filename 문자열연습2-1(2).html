@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자열연습2-1(2)</title>
+  </head>
+  <body>
+    <script>
+      let text =
+        "When I find myself in times of trouble Mother Mary comes to me Speaking words of wisdom, let it be.";
+
+      //변수에 모음을 담아 줍니다.
+      const vowels = "aeiou";
+      //positions객첼를 만들어서 모음의 모든 index를 배열로 할당하는 방법
+      let positions = {}; //빈객체 생성
+
+      //문자열의 모든 문자를 순회합니다.
+      for (let vowel of vowels) {
+        //모음(vowels)의 순회중인 글자와 text의 순회중인 글자가 일치하면 text의 순회중인 글자의 순번을 index에 할당
+        let index = text.indexOf(vowel);
+        //순회중인 글자의 순번이 마지막 순번(indexof(-1))이 아니면 실행
+        while(index !== -1){
+          //positions객체에 배열 값이 있으면 현재 순번을 추가
+          if(positions[vowel]){
+            positions[vowel].push(index);
+          }else{
+            //positions 객체에 배열이 없으면 positions객체에 vowel프로퍼티 값으로 index를 배열로 할당
+            positions[vowel] = [index];
+          }
+
+          //다음 인덱스를 찾기 위해 현재 위치 다음부터 검색합니다
+          index = text.indexOf(vowel, index+1);
+        }
+      }
+      //positions를 출력
+      console.log(positions);
+    </script>
+  </body>
+</html>
