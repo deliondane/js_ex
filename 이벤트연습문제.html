@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>이벤트 연습</title>
+    <style>
+      input[name="search"] {
+        width: 250px;
+        padding: 5px;
+        border: 2px solid #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="search"
+      onkeydown="mySearch(event)"
+      placeholder="검색어 입력 후, 엔터를 클릭하세요."
+    />
+    <script>
+      //이 곳에 자바스크립트 코드 작성
+
+      function mySearch(event){
+        if(event.key == "Enter"){
+          console.log(event.target);
+          alert(event.target.value);
+        }
+      }
+    </script>
+  </body>
+</html>
