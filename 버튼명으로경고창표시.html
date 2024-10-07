@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul class="itemlist">
+    <li><input type="button" value="button1"></li>
+    <li><input type="button" value="button2"></li>
+  </ul>
+
+  <script>
+    //input요소들을 nodeList로 할당
+    const buttons = document.querySelectorAll('input');
+
+    //buttons변수에 할당한 input요소들을 선택하고 forEach문으로 input요소를 순환하면서 click이벤트 생성
+    buttons.forEach(button => button.addEventListener("click",e => alert(`${e.target.value} 클릭`)));
+
+    //button3을 추가
+    const itemList = document.querySelector(".itemlist");
+    //li변수에 li요소를 생성하여 할당
+    let li = document.createElement("li");
+    //input 요소를 생성
+    let input = document.createElement("input");
+    input.setAttribute("type", "button");
+    input.setAttribute("value", "button3");
+    //생성된 li요소에 input요소를 추가
+    li.appendChild(input);
+    //.itemList요소에 생성한 li요소를 마지막 자손으로 추가
+    itemList.appendChild(li);
+
+    /*
+      button1과 button2는 클릭할 경우 정상적으로 alert(경고창)이 작동하지만 
+      button3은 이벤트 핸들러를 등록하지 않았기 때문에 클릭하더라도 아무런 일도 발생하지 않는다. 
+    */
+
+    // 다른 버튼처럼 클릭 이벤트가 활성화되기 위해서는 아래처럼 이벤트를 추가하면 된다.
+    input.addEventListener('click', event => alert(`${event.target.value} 클릭`));
+  </script>
+</body>
+</html>
