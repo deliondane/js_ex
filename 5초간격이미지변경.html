@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #pic {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 1px 1px 2px black;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="img/pic1.jpg" alt="이미지" id="pic">
+  <script>
+    const pic = document.querySelector("#pic");
+    //src속성값에서 뒤에서 5번째 순번의 한 글자만 반환
+    let sNum = pic.getAttribute("src").substr(-5,1);
+    
+    //gogo함수를 1.5초에 한 번씩 반복 호출
+    let timer = setInterval(gogo,2000);
+    //gogo함수 생성
+    function gogo(){
+      if(sNum >= 3){
+        sNum = 0;
+      }
+      sNum++; //sNum변수를 1씩 증가시킴
+      console.log(sNum);
+      //pic요소의 src속성의 이미지 경로를 변경하여 이미지를 변환
+      pic.setAttribute("src",`img/pic${sNum}.jpg`);
+    }
+    
+    pic.addEventListener("mouseenter",()=>{
+      clearInterval(timer); //setInterval 함수를 종료
+    })
+    pic.addEventListener("mouseleave",()=>{
+      timer = setInterval(gogo,2000);
+    })
+  </script>
+</body>
+
+</html>
