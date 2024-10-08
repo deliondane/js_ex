@@ -46,11 +46,12 @@ for(var i=0; i<lists.length; i++){
 }
 
 function clickList(){
-    if(this.className == 'clicked'){
-        this.className = '';
-    }else{
-        this.className = 'clicked';
-    }
+    // if(this.className == 'clicked'){
+    //     this.className = '';
+    // }else{
+    //     this.className = 'clicked';
+    // }
+    this.classList.toggle("clicked");
 }
 
 </script>
