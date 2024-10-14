@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      fieldset {
+        margin: 10px;
+      }
+      legend {
+        padding: 5px;
+        color: #fff;
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>브라우저 이름(appName)</legend>
+      <div id="name"></div>
+    </fieldset>
+    <fieldset>
+      <legend>브라우저 코드이름(appCodeName)</legend>
+      <div id="codeName"></div>
+    </fieldset>
+    <fieldset>
+      <legend>브라우저 언어(language)</legend>
+      <div id="language"></div>
+    </fieldset>
+    <fieldset>
+      <legend>브라우저 온라인(online)</legend>
+      <div id="online"></div>
+    </fieldset>
+
+    <!-- The text field -->
+    <input type="text" value="Hello World" id="myInput" />
+    <!-- The button used to copy the text -->
+    <button onclick="myFunction()">Copy text</button>
+
+    <script>
+      var browserName = document.getElementById("name");
+      browserName.innerText = navigator.appName; //브라우저 이름
+      var codeName = document.getElementById("codeName");
+      codeName.innerText = navigator.appCodeName; //브라우저 코드 이름
+      var language = document.getElementById("language");
+      language.innerText = navigator.language; //브라우저 언어
+      var online = document.getElementById("online");
+      online.innerText = navigator.onLine; //브라우저 온라인
+
+      function myFunction() {
+      /* Get the text field */
+      var copyText = document.getElementById("myInput");
+      /* Select the text field */
+      //copyText.select();
+      //copyText.setSelectionRange(0, 99999); /* For mobile devices */
+      /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+      /* Alert the copied text */
+      alert("Copied the text: " + copyText.value);
+      }
+    </script>
+  </body>
+</html>
