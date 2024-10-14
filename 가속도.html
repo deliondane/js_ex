@@ -35,7 +35,7 @@
       if(i >= 90){ //i가 90보다 커지면 i값을 90으로 고정시키고 반복함수를 종료시킴
         i = 90;
         return clearInterval(id);
-      }
+      }//다시 반대로 돌리려고 할 경우 어떻게 해야하지 ?
     }
     //1초에 60프레임으로 반복함수 호출
     const id = setInterval(box1Animation, 1000/60);
